@@ -66,11 +66,7 @@ public class MovePlayer : MonoBehaviour {
         Animating(m_TurnInputValue, m_MovementInputValue, run);
         Animating2(m_TurnInputValue, m_MovementInputValue, run);
     }
-  
-    void RotationCharacter(float rotation)
-    {
-
-    }
+ 
     void Move()
     {
         // Create a vector in the direction the tank is facing with a magnitude based on the input, speed and the time between frames.
@@ -105,9 +101,4 @@ public class MovePlayer : MonoBehaviour {
         animacion.SetBool("isRunning", run);
         
     }
-
-
-
-
-
 }

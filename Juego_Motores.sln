@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juego_Motores.Plugins", "Juego_Motores.Plugins.csproj", "{21C6FA1B-A38E-24EE-4053-742989CF6D6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juego_Motores", "Juego_Motores.csproj", "{4918EF79-C270-99DF-86C1-023FA3C9EE41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juego_Motores.Editor.Plugins", "Juego_Motores.Editor.Plugins.csproj", "{F49E5BC2-7295-104D-238E-C50BB591CDDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juego_Motores.Editor", "Juego_Motores.Editor.csproj", "{086429E5-702A-8883-50D9-30B8676A78B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21C6FA1B-A38E-24EE-4053-742989CF6D6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C6FA1B-A38E-24EE-4053-742989CF6D6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C6FA1B-A38E-24EE-4053-742989CF6D6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C6FA1B-A38E-24EE-4053-742989CF6D6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4918EF79-C270-99DF-86C1-023FA3C9EE41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4918EF79-C270-99DF-86C1-023FA3C9EE41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4918EF79-C270-99DF-86C1-023FA3C9EE41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4918EF79-C270-99DF-86C1-023FA3C9EE41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F49E5BC2-7295-104D-238E-C50BB591CDDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49E5BC2-7295-104D-238E-C50BB591CDDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F49E5BC2-7295-104D-238E-C50BB591CDDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F49E5BC2-7295-104D-238E-C50BB591CDDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086429E5-702A-8883-50D9-30B8676A78B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086429E5-702A-8883-50D9-30B8676A78B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086429E5-702A-8883-50D9-30B8676A78B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086429E5-702A-8883-50D9-30B8676A78B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
