@@ -4,6 +4,9 @@ public class MovePlayer : MonoBehaviour {
 
     //Publics
     public float speed = 6f;
+    public float m_TurnSpeed = 180f;
+    private float m_TurnInputValue;
+    private float m_MovementInputValue;
     //Privates
     Vector3 movement;
     Quaternion angle_rotation;
@@ -13,15 +16,34 @@ public class MovePlayer : MonoBehaviour {
 
     float camRayLenght = 100f;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    string m_MovementAxisName;
+    string m_TurnAxisName;
+
+    // Use this for initialization
+    void Start () {
+        // The axes names are based on player number.
+        m_MovementAxisName = "Vertical";
+        m_TurnAxisName = "Horizontal";
+    }
+    private void OnEnable()
+    {
+        // When the tank is turned on, make sure it's not kinematic.
+        rigidBodyPlayer.isKinematic = false;
+        // Also reset the input values.
+        m_TurnInputValue = 0f;
+    }
+    private void OnDisable()
+    {
+        // When the tank is turned off, set it to kinematic so it stops moving.
+        rigidBodyPlayer.isKinematic = true;
+    }
+
+    // Update is called once per frame
+    void Update () {
+        // Store the value of both input axes.
+        m_MovementInputValue = Input.GetAxis(m_MovementAxisName);
+        m_TurnInputValue = Input.GetAxis(m_TurnAxisName);
+    }
 
     //wdqwdqdqw
     void Awake()
@@ -36,59 +58,34 @@ public class MovePlayer : MonoBehaviour {
     void FixedUpdate()
     {
         // Store the input axes.
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
         float run = Input.GetAxisRaw("Jump");
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            transform.Rotate(0, 90, 0);
-        }
-
-        //CapturKeyPressed();
         // Move the player around the scene.
-        Move(h, v);
+        Move();
+        Turn();
         // Animate the player.
-        Animating(h, v,run);
-        Animating2(h, v, run);
+        Animating(m_TurnInputValue, m_MovementInputValue, run);
+        Animating2(m_TurnInputValue, m_MovementInputValue, run);
     }
-    float CapturKeyPressed()
-    {
-        bool key_a = Input.GetKey("a");
-        bool key_d = Input.GetKey("d");
-        bool key_w = Input.GetKey("w");
-        bool key_s = Input.GetKey("s");
-
-        if (key_a)
-            transform.Rotate(0, 180, 0);
-        if (key_d)
-            transform.Rotate(0, 90, 0);
-        if (key_w)
-            transform.Rotate(0, -180, 0);
-        if (key_s)
-            transform.Rotate(0, 180, 0);
-
-
-        return 0f;
-
-    }
+  
     void RotationCharacter(float rotation)
     {
 
     }
-    void Move(float h, float v)
+    void Move()
     {
-        // Set the movement vector based on the axis input.
-        movement.Set(h, 0f, v);
-        // Normalise the movement vector and make it proportional to the speed per second.
-        movement = movement.normalized * speed * Time.deltaTime;
-        
-        // Move the player to it's current position plus the movement.
-        rigidBodyPlayer.MovePosition(transform.position + movement);
-        
-
-
-
+        // Create a vector in the direction the tank is facing with a magnitude based on the input, speed and the time between frames.
+        Vector3 movement = transform.forward * m_MovementInputValue * speed * Time.deltaTime;
+        // Apply this movement to the rigidbody's position.
+        rigidBodyPlayer.MovePosition(rigidBodyPlayer.position + movement);
+    }
+    private void Turn()
+    {
+        // Determine the number of degrees to be turned based on the input, speed and time between frames.
+        float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
+        // Make this into a rotation in the y axis.
+        Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
+        // Apply this rotation to the rigidbody's rotation.
+        rigidBodyPlayer.MoveRotation(rigidBodyPlayer.rotation * turnRotation);
     }
     void Animating(float h, float v,float r)
     {
