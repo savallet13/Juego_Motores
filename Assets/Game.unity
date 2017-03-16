@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6126bc01b3d82ec4aa9a0e66447c7041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 5.5
 --- !u!1001 &640700576
 Prefab:
   m_ObjectHideFlags: 0
@@ -338,10 +338,18 @@ Prefab:
     - target: {fileID: 13700000, guid: 61df008098320aa49b73c5a09212df7d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6efd4f91adea8144e8997fd0dcba6e70, type: 2}
+      objectReference: {fileID: 2100000, guid: d7d2aceb13b5e72459afcbc939d20d36, type: 2}
     - target: {fileID: 400000, guid: 61df008098320aa49b73c5a09212df7d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 61df008098320aa49b73c5a09212df7d, type: 3}
+      propertyPath: m_CullingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 61df008098320aa49b73c5a09212df7d, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 61df008098320aa49b73c5a09212df7d, type: 3}
