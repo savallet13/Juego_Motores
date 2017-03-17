@@ -58,13 +58,18 @@ public class MovePlayer : MonoBehaviour {
     void FixedUpdate()
     {
         // Store the input axes.
-        float run = Input.GetAxisRaw("Jump");
+        float run = Input.GetAxisRaw("Run");
+        float jump = Input.GetAxisRaw("Jump");
+        float hit = Input.GetAxisRaw("Hit");
         // Move the player around the scene.
         Move();
         Turn();
         // Animate the player.
         Animating(m_TurnInputValue, m_MovementInputValue, run);
         Animating2(m_TurnInputValue, m_MovementInputValue, run);
+        Animatiion_Jump(jump);
+        Animatiion_WalkJump(m_MovementInputValue,jump);
+        Animatiion_Hit(hit);
     }
  
     void Move()
@@ -83,6 +88,24 @@ public class MovePlayer : MonoBehaviour {
         // Apply this rotation to the rigidbody's rotation.
         rigidBodyPlayer.MoveRotation(rigidBodyPlayer.rotation * turnRotation);
     }
+
+    void Animatiion_Jump(float jump)
+    {
+        bool j = jump != 0f;
+        animacion.SetBool("isJump",j);
+    }
+    void Animatiion_WalkJump(float jump, float walk)
+    {
+        bool jw = jump!=0f && walk!=0;
+        animacion.SetBool("isWalkJump", jw);
+    }
+    void Animatiion_Hit(float hit)
+    {
+        bool golpe = hit != 0f;
+        animacion.SetBool("isHit", golpe);
+    }
+
+
     void Animating(float h, float v,float r)
     {
         // Create a boolean that is true if either of the input axes is non-zero.
