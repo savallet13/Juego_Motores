@@ -14,6 +14,19 @@ public class MovePlayer : MonoBehaviour {
     Rigidbody rigidBodyPlayer;
     int floorMask;
 
+    
+    float jumpForce = 100;
+    float time = 0;
+    float distoground;
+    float jumpCD = 0;
+    float jumpseconds= 0;
+    float timer = 0;
+    float seconds;
+
+    bool canDouble = false;
+    bool grounded = true;
+    
+
     float camRayLenght = 100f;
 
     string m_MovementAxisName;
@@ -21,6 +34,7 @@ public class MovePlayer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        
         // The axes names are based on player number.
         m_MovementAxisName = "Vertical";
         m_TurnAxisName = "Horizontal";
@@ -65,6 +79,7 @@ public class MovePlayer : MonoBehaviour {
         // Move the player around the scene.
         Move();
         Turn();
+        Jump();
         // Animate the player.
         Animating(m_TurnInputValue, m_MovementInputValue, run);
         Animating2(m_TurnInputValue, m_MovementInputValue, run);
@@ -81,6 +96,54 @@ public class MovePlayer : MonoBehaviour {
         // Apply this movement to the rigidbody's position.
         rigidBodyPlayer.MovePosition(rigidBodyPlayer.position + movement);
     }
+
+    void Jump()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            if (grounded && jumpCD == 0)
+            {
+                rigidBodyPlayer.velocity = new Vector3(0, 0, 0);
+                rigidBodyPlayer.MovePosition(rigidBodyPlayer.position +(new Vector3(0, jumpForce, 0)*Time.deltaTime));
+                
+                canDouble = true;
+                grounded = false;
+            }
+            else
+            {
+                if (canDouble)
+                {
+                    canDouble = false;
+                    grounded = true;
+                    rigidBodyPlayer.velocity = new Vector3(0, 0, 0);
+                    rigidBodyPlayer.AddForce(new Vector3(0, 350, 0));
+                    jumpCD = 1;
+                }
+            } 
+
+
+            
+            }
+
+    if ( jumpCD == 1) {
+
+                timer += Time.deltaTime;
+                seconds = timer % 60;
+            }
+
+    if (seconds > 2) {
+
+                jumpCD = 0;
+                timer = 0;
+                seconds = 0;
+
+    
+            }
+
+        Debug.Log(jumpCD);
+    }
+
+   
     private void Turn()
     {
         // Determine the number of degrees to be turned based on the input, speed and time between frames.
