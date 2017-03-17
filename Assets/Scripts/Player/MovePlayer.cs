@@ -61,6 +61,7 @@ public class MovePlayer : MonoBehaviour {
         float run = Input.GetAxisRaw("Run");
         float jump = Input.GetAxisRaw("Jump");
         float hit = Input.GetAxisRaw("Hit");
+        float take_Object = Input.GetAxisRaw("TakeObject");
         // Move the player around the scene.
         Move();
         Turn();
@@ -70,6 +71,7 @@ public class MovePlayer : MonoBehaviour {
         Animatiion_Jump(jump);
         Animatiion_WalkJump(m_MovementInputValue,jump);
         Animatiion_Hit(hit);
+        Animation_TakeObject(take_Object);
     }
  
     void Move()
@@ -103,6 +105,11 @@ public class MovePlayer : MonoBehaviour {
     {
         bool golpe = hit != 0f;
         animacion.SetBool("isHit", golpe);
+    }
+    void Animation_TakeObject(float take_object)
+    {
+        bool take = take_object != 0f;
+        animacion.SetBool("isTakeObject", take);
     }
 
 
