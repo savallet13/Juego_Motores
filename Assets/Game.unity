@@ -372,7 +372,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 500
-  field of view: 98
+  field of view: 61
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -625,7 +625,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b544816461f324e56a39767fdeb5b114, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -25.1
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b544816461f324e56a39767fdeb5b114, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: b544816461f324e56a39767fdeb5b114, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: b544816461f324e56a39767fdeb5b114, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400000, guid: b544816461f324e56a39767fdeb5b114, type: 2}
@@ -819,7 +831,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 7
   m_Type: 1
-  m_Color: {r: 0.8172414, g: 0.8172414, b: 0.8172414, a: 1}
+  m_Color: {r: 0.6103448, g: 0.5834838, b: 0.4442951, a: 1}
   m_Intensity: 2.3
   m_Range: 10
   m_SpotAngle: 30
@@ -963,6 +975,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1157579224}
   - component: {fileID: 1157579223}
+  - component: {fileID: 1157579225}
   m_Layer: 0
   m_Name: Water4AdvancedReflectionMain Camera
   m_TagString: Untagged
@@ -1010,13 +1023,21 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1157579222}
-  m_LocalRotation: {x: -0.27319226, y: 2.394697e-12, z: 1.4279071e-12, w: 0.9619595}
-  m_LocalPosition: {x: 370.90005, y: 32.08, z: 43.8}
+  m_LocalRotation: {x: 0.24845393, y: 0.04792432, z: 0.012308506, w: -0.96737915}
+  m_LocalPosition: {x: 367.11673, y: 1.6295395, z: 133.90048}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &1157579225
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1157579222}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
 --- !u!1 &1240512799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,8 +1095,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1240512799}
-  m_LocalRotation: {x: -0.27319226, y: 2.394697e-12, z: 1.4279071e-12, w: 0.9619595}
-  m_LocalPosition: {x: 370.90005, y: 32.08, z: 43.8}
+  m_LocalRotation: {x: -0.21663676, y: 0.016107317, z: 0.0035748295, w: 0.97611284}
+  m_LocalPosition: {x: 362.7641, y: 4.600334, z: 21.745605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1105,6 +1126,69 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.61, y: 3.06, z: 5.62}
   m_Center: {x: 0, y: 1.45, z: 0}
+--- !u!1 &1691989670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1691989672}
+  - component: {fileID: 1691989671}
+  m_Layer: 0
+  m_Name: Directional light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1691989671
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1691989670}
+  m_Enabled: 0
+  serializedVersion: 7
+  m_Type: 1
+  m_Color: {r: 0.80344826, g: 0.73255575, b: 0.75132143, a: 1}
+  m_Intensity: 0.91
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &1691989672
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1691989670}
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: 512, y: 55.5, z: 512}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1738097837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,10 +1226,10 @@ Terrain:
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 5f3bdf1fc8505e1489be6311beb9d0d2, type: 2}
   m_TreeDistance: 2000
-  m_TreeBillboardDistance: 50
+  m_TreeBillboardDistance: 2000
   m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeMaximumFullLODCount: 61
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
