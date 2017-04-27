@@ -133,6 +133,7 @@
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Managers\BarcoManager.cs" />
     <Compile Include="Assets\Scripts\Player\CollisionCube.cs" />
     <Compile Include="Assets\Scripts\Player\MovePlayer.cs" />
   </ItemGroup>
