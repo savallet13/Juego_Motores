@@ -10,6 +10,17 @@ public class EnemyMovement : MonoBehaviour
     //EnemyHealth enemyHealth;        // Reference to this enemy's health.
     NavMeshAgent nav;               // Reference to the nav mesh agent.
 
+    public Vector3 posPlayer;
+    public float distancia;
+    public float distanciaMax = 25f;
+
+
+
+    void FixedUpdate()
+    {
+
+    }
+
 
     void Awake()
     {
@@ -26,25 +37,30 @@ public class EnemyMovement : MonoBehaviour
         anim.SetBool("Visto", true);
     }
 
+    void Parar()
+    {
+        anim.SetBool("Visto", false);
+    }
+
 
     void Update()
     {
-        
-        nav.SetDestination(player.position);
+        posPlayer = player.transform.position;
 
-        Correr();
-        /*
-        // If the enemy and the player have health left...
-        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
+        distancia = Vector3.Distance(posPlayer, this.transform.position); //Obtencion del vector dirección (transform es él mismo en este caso Enemy)
+
+        if (distancia < distanciaMax)
         {
-            // ... set the destination of the nav mesh agent to the player.
-            
+            nav.SetDestination(player.position);
+            Correr();
         }
-        // Otherwise...
+
         else
         {
-            // ... disable the nav mesh agent.
-            nav.enabled = false;
-        }*/
+            nav.SetDestination(transform.position);
+            Parar();
+        }
+
+       
     }
 }

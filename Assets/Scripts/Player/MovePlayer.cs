@@ -194,4 +194,19 @@ public class MovePlayer : MonoBehaviour {
         animacion.SetBool("isRunning", run);
         
     }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        
+
+        if (other.tag == "Canoa")
+        {
+
+            Destroy(other.gameObject);
+            
+        }
+
+
+    }
 }
