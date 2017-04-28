@@ -28,7 +28,8 @@ public class Hud : MonoBehaviour {
     {
         if(slider_life.value <= 0)
         {
-            //You has die!!
+            //You has die
+            slider_life.value = 0f;
 
         }
         else
@@ -45,7 +46,6 @@ public class Hud : MonoBehaviour {
             //You has angry, need eat!!
             slider_food.value = 0;
             slider_life.value -= 0.05f;
-
         }
         else
         {
