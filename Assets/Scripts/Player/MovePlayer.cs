@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class MovePlayer : MonoBehaviour {
 
     //Publics
     public float speed = 6f;
     public float m_TurnSpeed = 180f;
+    public Text cont;
+
+
     private float m_TurnInputValue;
     private float m_MovementInputValue;
     //Privates
@@ -12,6 +16,7 @@ public class MovePlayer : MonoBehaviour {
     Quaternion angle_rotation;
     Animator animacion;
     Rigidbody rigidBodyPlayer;
+    
     int floorMask;
 
     
@@ -38,6 +43,7 @@ public class MovePlayer : MonoBehaviour {
         // The axes names are based on player number.
         m_MovementAxisName = "Vertical";
         m_TurnAxisName = "Horizontal";
+
     }
     private void OnEnable()
     {
@@ -198,15 +204,21 @@ public class MovePlayer : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        
-
         if (other.tag == "Canoa")
         {
-
             Destroy(other.gameObject);
-            
+            UpdateScore(cont);
         }
-
-
+    }
+    void UpdateScore(Text score)
+    {
+        if (score.text.Equals("0")) {
+            score.text = 1+"";
+        }
+        else{
+            score.text += 1;
+        }
+        if (score.text.Equals("6"))
+            Application.Quit();
     }
 }
