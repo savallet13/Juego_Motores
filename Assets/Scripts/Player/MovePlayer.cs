@@ -209,6 +209,11 @@ public class MovePlayer : MonoBehaviour {
             Destroy(other.gameObject);
             UpdateScore(cont);
         }
+        if (other.tag.Equals("Boar"))
+        {
+            //print("aodnvsalkdnvainlfdinbvanafdgnbkjadsbj-vsa");
+            Destroy(other.gameObject);
+        }
     }
     void UpdateScore(Text score)
     {

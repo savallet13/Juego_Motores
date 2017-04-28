@@ -14,14 +14,10 @@ public class EnemyMovement : MonoBehaviour
     public float distancia;
     public float distanciaMax = 25f;
 
-
-
     void FixedUpdate()
     {
 
     }
-
-
     void Awake()
     {
         // Set up the references.
@@ -31,18 +27,14 @@ public class EnemyMovement : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
     }
-
     void Correr()
     {
         anim.SetBool("Visto", true);
     }
-
     void Parar()
     {
         anim.SetBool("Visto", false);
     }
-
-
     void Update()
     {
         posPlayer = player.transform.position;
@@ -54,13 +46,10 @@ public class EnemyMovement : MonoBehaviour
             nav.SetDestination(player.position);
             Correr();
         }
-
         else
         {
             nav.SetDestination(transform.position);
             Parar();
         }
-
-       
     }
 }
