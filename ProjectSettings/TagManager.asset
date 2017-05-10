@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Canoa
   - Boar
+  - Span
   layers:
   - Default
   - TransparentFX
