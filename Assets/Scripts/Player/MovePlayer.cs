@@ -147,7 +147,7 @@ public class MovePlayer : MonoBehaviour {
     
             }
 
-        Debug.Log(jumpCD);
+        
     }
 
    

@@ -7,6 +7,7 @@ TagManager:
   - Canoa
   - Boar
   - Span
+  - cubo 3
   layers:
   - Default
   - TransparentFX

@@ -22,6 +22,7 @@ public class CollisionCube : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             animacion = other.gameObject.GetComponent<Animator>();
+            
 
         }
     }
