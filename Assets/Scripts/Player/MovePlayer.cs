@@ -8,6 +8,8 @@ public class MovePlayer : MonoBehaviour {
     public float m_TurnSpeed = 180f;
     public Text cont;
     public Slider slider_food;
+    public Hud hud;
+    public SpawnFood spf;
 
 
     private float m_TurnInputValue;
@@ -207,31 +209,20 @@ public class MovePlayer : MonoBehaviour {
     {
         if (other.tag == "Canoa")
         {
-            print("Colision contra la canoa");
             Destroy(other.gameObject);
-            UpdateScore(cont);
+            hud.UpdateScore(cont);
         }
         if (other.tag.Equals("Boar"))
         {
-            print("Colision contra el enemigo");
             Destroy(other.gameObject);
         }
         if (other.tag.Equals("Respawn"))
         {
-            print("Colision contra la comida");
-            slider_food.value += 200f;
+            hud.updateFood(200f);
+            int num_sp = int.Parse(other.name.Substring(1));
+            spf.StartCoroutine(spf.prova(num_sp-1));
             Destroy(other.gameObject);
         }
     }
-    void UpdateScore(Text score)
-    {
-        if (score.text.Equals("0")) {
-            score.text = 1+"";
-        }
-        else{
-            score.text += 1;
-        }
-        if (score.text.Equals("6"))
-            Application.Quit();
-    }
+    
 }
