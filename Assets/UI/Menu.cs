@@ -26,7 +26,7 @@ public class Menu : MonoBehaviour
         {
             if (SGUI.PixelInPercentages(Input.mousePosition, Start.Percentages))
             {
-                SceneManager.LoadScene("GameScene");
+                SceneManager.LoadScene("Game");
 
 
             }
@@ -48,15 +48,17 @@ public class Menu : MonoBehaviour
     void OnGUI()
     {
         SGUI.DrawTexture(0, 0, 100, 100, Background);
-        float size = 20;
-        float sizeb = 6;
-        Start = new SGUI.SelfButton(40, 60, sizeb * 5.0f * Screen.height / Screen.width, sizeb, StartT, 1.1f, 1.1f);
-        Explore = new SGUI.SelfButton(40, 68, sizeb * 5.0f * Screen.height / Screen.width, sizeb, ExploreT, 1.1f, 1.1f);
-        Options = new SGUI.SelfButton(40, 78, sizeb * 5.0f * Screen.height / Screen.width, sizeb, OptionsT, 1.1f, 1.1f);
+        
+        float size = 15;
+        float sizeb = 13;
+        Start = new SGUI.SelfButton(10, 70, size, size, StartT, 1.1f, 1.1f);
+        Explore = new SGUI.SelfButton(40, 72, size, sizeb, ExploreT, 1.1f, 1.1f);
+        Options = new SGUI.SelfButton(70, 70, size, size, OptionsT, 1.1f, 1.1f);
         
 
 
         Start.Draw();
         Options.Draw();
+        Explore.Draw();
     }
 }
