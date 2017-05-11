@@ -57,4 +57,17 @@ public class Hud : MonoBehaviour {
     {
         slider_food.value += food;
     }
+    public void UpdateScore(Text score)
+    {
+        if (score.text.Equals("0"))
+        {
+            score.text = 1 + "";
+        }
+        else
+        {
+            score.text += 1;
+        }
+        if (score.text.Equals("6"))
+            Application.Quit();
+    }
 }

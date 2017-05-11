@@ -803,6 +803,8 @@ MonoBehaviour:
   m_TurnSpeed: 180
   cont: {fileID: 120493853}
   slider_food: {fileID: 1771452936}
+  hud: {fileID: 965939227}
+  spf: {fileID: 1810548226}
 --- !u!1 &528387205
 GameObject:
   m_ObjectHideFlags: 0
