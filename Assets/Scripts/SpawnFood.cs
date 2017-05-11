@@ -6,11 +6,9 @@ public class SpawnFood : MonoBehaviour {
 
 
     public Transform [] food_spawn_points;
-    //public float time_spawn;
     public GameObject food;
     private GameObject sp;
     private int indice;
-    private float time_rspwn=5f;
 
 	// Use this for initialization
 	void Start () {

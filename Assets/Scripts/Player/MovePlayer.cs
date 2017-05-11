@@ -10,6 +10,8 @@ public class MovePlayer : MonoBehaviour {
     public Slider slider_food;
     public Hud hud;
     public SpawnFood spf;
+    public SpawnShip spship;
+    public SpawnEnemy spe;
 
 
     private float m_TurnInputValue;
@@ -129,30 +131,19 @@ public class MovePlayer : MonoBehaviour {
                     jumpCD = 1;
                 }
             } 
-
-
-            
             }
-
     if ( jumpCD == 1) {
 
                 timer += Time.deltaTime;
                 seconds = timer % 60;
             }
-
     if (seconds > 2) {
 
                 jumpCD = 0;
                 timer = 0;
                 seconds = 0;
-
-    
             }
-
-        
     }
-
-   
     private void Turn()
     {
         // Determine the number of degrees to be turned based on the input, speed and time between frames.
@@ -183,8 +174,6 @@ public class MovePlayer : MonoBehaviour {
         bool take = take_object != 0f;
         animacion.SetBool("isTakeObject", take);
     }
-
-
     void Animating(float h, float v,float r)
     {
         // Create a boolean that is true if either of the input axes is non-zero.
@@ -203,8 +192,6 @@ public class MovePlayer : MonoBehaviour {
         animacion.SetBool("isRunning", run);
         
     }
-
-
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Canoa")
@@ -215,6 +202,7 @@ public class MovePlayer : MonoBehaviour {
         if (other.tag.Equals("Boar"))
         {
             Destroy(other.gameObject);
+            spe.removeEnemy();
         }
         if (other.tag.Equals("Respawn"))
         {

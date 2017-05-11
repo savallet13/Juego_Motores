@@ -27,20 +27,12 @@ public class Menu : MonoBehaviour
             if (SGUI.PixelInPercentages(Input.mousePosition, Start.Percentages))
             {
                 SceneManager.LoadScene("Game");
-
-
-            }
-
-            if (SGUI.PixelInPercentages(Input.mousePosition, Explore.Percentages))
+            }else if (SGUI.PixelInPercentages(Input.mousePosition, Explore.Percentages))
             {
-                // Si pulsamos credits
-
-            }
-
-            if (SGUI.PixelInPercentages(Input.mousePosition, Options.Percentages))
+                SceneManager.LoadScene("Explore");
+            }else if (SGUI.PixelInPercentages(Input.mousePosition, Options.Percentages))
             {
-                // Si pulsamos credits
-
+                SceneManager.LoadScene("Explore");
             }
         }
     }

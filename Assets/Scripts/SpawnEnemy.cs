@@ -8,7 +8,8 @@ public class SpawnEnemy : MonoBehaviour
 
     public Transform[] enemy_spawn_points;
     public GameObject bear;
-    private GameObject sp;
+    public SpawnShip sp;
+    private int cont_enemy = 0;
 
     // Use this for initialization
     void Start()
@@ -25,6 +26,13 @@ public class SpawnEnemy : MonoBehaviour
         for (int i = 0; i < enemy_spawn_points.Length; i++)
         {
             Instantiate(bear, enemy_spawn_points[i].transform.position, enemy_spawn_points[i].transform.rotation);
+        }
+    }
+    public void removeEnemy()
+    {
+        ++cont_enemy;       
+        if (cont_enemy.Equals(enemy_spawn_points.Length)) {
+            sp.Show_Pieces_Ship_2();
         }
     }
 }
