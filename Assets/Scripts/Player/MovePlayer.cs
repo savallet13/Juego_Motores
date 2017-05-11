@@ -207,7 +207,7 @@ public class MovePlayer : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Canoa")
+        if (other.tag.Equals("Canoa"))
         {
             Destroy(other.gameObject);
             hud.UpdateScore(cont);
