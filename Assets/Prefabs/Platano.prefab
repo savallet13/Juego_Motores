@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 65793120473743320}
   m_Layer: 0
   m_Name: Platano
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &65793120473743320
 BoxCollider:
@@ -103,8 +103,8 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1018874815658608}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.406244, y: 2.724909, z: 1.0173774}
-  m_Center: {x: -0.0149207115, y: 0.7386457, z: -0.012949318}
+  m_Size: {x: 5.406244, y: 2.724909, z: 2.46}
+  m_Center: {x: -0.34, y: 0.71, z: 0.02}

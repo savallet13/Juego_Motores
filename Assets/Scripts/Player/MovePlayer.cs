@@ -7,6 +7,7 @@ public class MovePlayer : MonoBehaviour {
     public float speed = 6f;
     public float m_TurnSpeed = 180f;
     public Text cont;
+    public Slider slider_food;
 
 
     private float m_TurnInputValue;
@@ -206,12 +207,19 @@ public class MovePlayer : MonoBehaviour {
     {
         if (other.tag == "Canoa")
         {
+            print("Colision contra la canoa");
             Destroy(other.gameObject);
             UpdateScore(cont);
         }
         if (other.tag.Equals("Boar"))
         {
-            //print("aodnvsalkdnvainlfdinbvanafdgnbkjadsbj-vsa");
+            print("Colision contra el enemigo");
+            Destroy(other.gameObject);
+        }
+        if (other.tag.Equals("Respawn"))
+        {
+            print("Colision contra la comida");
+            slider_food.value += 200f;
             Destroy(other.gameObject);
         }
     }
