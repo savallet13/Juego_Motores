@@ -53,4 +53,8 @@ public class Hud : MonoBehaviour {
         }
         
     }
+    public void updateFood(float food)
+    {
+        slider_food.value += food;
+    }
 }
