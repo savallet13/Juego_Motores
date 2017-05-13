@@ -15,7 +15,6 @@ public class SpawnFood : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Spanw_Food();
-        //StartCoroutine(prova(2));
     }
 	// Update is called once per frame
 	void Update () {
