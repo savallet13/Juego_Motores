@@ -6,12 +6,9 @@ public class CollisionCube : MonoBehaviour {
 
     private Animator animacion;
     private Rigidbody rigidBodyPlayer;
-   
 
     // Use this for initialization
     void Start () {
-
-        
 		
 	}
 	

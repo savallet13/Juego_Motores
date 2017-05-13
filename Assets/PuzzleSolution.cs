@@ -5,9 +5,7 @@ using UnityEngine;
 public class PuzzleSolution : MonoBehaviour {
 
 
-    public int cubos = 0;
-
-    public GameObject branch;
+    int cubos = 0; 
 
 	// Use this for initialization
 	void Start () {
@@ -17,7 +15,12 @@ public class PuzzleSolution : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        
+        if ( cubos == 3)
+        {
+
+            Debug.Log("Puzzle correcto");
+
+        }
 		
 	}
     void OnCollisionEnter(Collision other)
@@ -27,13 +30,6 @@ public class PuzzleSolution : MonoBehaviour {
         {
             cubos++;
             Debug.Log("cubos correctos: " + cubos);
-
-            if (cubos == 3)
-            {
-
-                Debug.Log("Puzzle correcto");
-                Spawn();
-            }
 
 
         }
@@ -50,11 +46,5 @@ public class PuzzleSolution : MonoBehaviour {
         }
 
     }
-
-    public void Spawn()
-    {
-        Instantiate(branch, new Vector3(455, 55, 898), Quaternion.identity);
-
-    }
-
+    
 }
