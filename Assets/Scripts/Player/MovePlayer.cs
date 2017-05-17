@@ -10,10 +10,12 @@ public class MovePlayer : MonoBehaviour {
     public Slider slider_food;
     public Hud hud;
     public SpawnFood spf;
+    public SpawnPiecesShip sps;
 
 
     private float m_TurnInputValue;
     private float m_MovementInputValue;
+    private int bears_deaths = 0;
     //Privates
     Vector3 movement;
     Quaternion angle_rotation;
@@ -214,7 +216,9 @@ public class MovePlayer : MonoBehaviour {
         }
         if (other.tag.Equals("Boar"))
         {
+            bears_deaths++;
             Destroy(other.gameObject);
+            EnemiesDeaths();
         }
         if (other.tag.Equals("Respawn"))
         {
@@ -222,6 +226,13 @@ public class MovePlayer : MonoBehaviour {
             int num_sp = int.Parse(other.name.Substring(1));
             spf.StartCoroutine(spf.prova(num_sp-1));
             Destroy(other.gameObject);
+        }
+    }
+    void EnemiesDeaths()
+    {
+        if (bears_deaths==5)
+        {
+            sps.pieza();
         }
     }
     
