@@ -1092,7 +1092,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 61df008098320aa49b73c5a09212df7d, type: 3}
       propertyPath: m_LocalPosition.x
+<<<<<<< HEAD
+<<<<<<< HEAD
+      value: 453
+=======
       value: 412.5
+>>>>>>> origin/master
+=======
+      value: 753
+>>>>>>> parent of fa5e563... Modify Errores Spawn Points
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61df008098320aa49b73c5a09212df7d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1100,7 +1108,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61df008098320aa49b73c5a09212df7d, type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
+<<<<<<< HEAD
+      value: 841
+=======
       value: 129.8
+>>>>>>> origin/master
+=======
+      value: 186
+>>>>>>> parent of fa5e563... Modify Errores Spawn Points
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61df008098320aa49b73c5a09212df7d, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2327,8 +2343,23 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1240512799}
+<<<<<<< HEAD
   m_LocalRotation: {x: 0.23222539, y: 0.44567183, z: 0.120899096, w: -0.85605574}
   m_LocalPosition: {x: 548.1401, y: -6.511696, z: 82.614136}
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_LocalRotation: {x: -0.21173677, y: 0.42664847, z: 0.10345818, w: 0.87317526}
+  m_LocalPosition: {x: -390.37952, y: -509.6329, z: 266.2364}
+=======
+  m_LocalRotation: {x: 0.23222539, y: 0.44567204, z: 0.12089917, w: -0.8560556}
+  m_LocalPosition: {x: 548.1401, y: -6.5117035, z: 82.61414}
+>>>>>>> origin/master
+=======
+  m_LocalRotation: {x: 0.069549486, y: 0.09114946, z: 0.006381672, w: -0.9933851}
+  m_LocalPosition: {x: 1131.9082, y: -64.97358, z: 301.6708}
+>>>>>>> parent of fa5e563... Modify Errores Spawn Points
+>>>>>>> origin/master
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
