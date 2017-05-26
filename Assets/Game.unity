@@ -2339,6 +2339,7 @@ Transform:
   m_GameObject: {fileID: 1240512799}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalRotation: {x: 0.23222539, y: 0.44567183, z: 0.120899096, w: -0.85605574}
   m_LocalPosition: {x: 548.1401, y: -6.511696, z: 82.614136}
 =======
@@ -2359,6 +2360,10 @@ Transform:
   m_LocalRotation: {x: 0.069549486, y: 0.09114946, z: 0.006381672, w: -0.9933851}
   m_LocalPosition: {x: 1131.9082, y: -64.97358, z: 301.6708}
 >>>>>>> parent of 11acd26... Lod Chest
+=======
+  m_LocalRotation: {x: -0.32974535, y: 0.29585323, z: 0.10964011, w: 0.88978535}
+  m_LocalPosition: {x: 430.0001, y: -15.781189, z: 76.48462}
+>>>>>>> parent of 29bcfcc... Lod changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2846,8 +2851,7 @@ LODGroup:
   - screenRelativeHeight: 0.1
     fadeTransitionWidth: 0
     renderers:
-    - renderer: {fileID: 230557916}
-    - renderer: {fileID: 514507263}
+    - renderer: {fileID: 1597294341}
   - screenRelativeHeight: 0.05
     fadeTransitionWidth: 0
     renderers:
