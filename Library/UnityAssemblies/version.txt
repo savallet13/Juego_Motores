@@ -19,5 +19,6 @@ D:/unity52/Editor/Data/UnityExtensions/Unity/UnityAnalytics/Editor/UnityEditor.A
 D:/unity52/Editor/Data/UnityExtensions/Unity/UnityHoloLens/Editor/UnityEditor.HoloLens.dll
 D:/unity52/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll
 D:/unity52/Editor/Data/Managed/UnityEditor.Graphs.dll
+D:/unity52/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 D:/unity52/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll
 C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/2015/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll
