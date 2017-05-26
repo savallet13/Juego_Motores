@@ -61,11 +61,11 @@ public class Hud : MonoBehaviour {
     {
         if (score.text.Equals("0"))
         {
-            score.text += 1;
+            score.text = 1 + "";
         }
         else
         {
-            score.text += 1+ score.text;
+            score.text += 1;
         }
         if (score.text.Equals("6"))
             Application.Quit();
