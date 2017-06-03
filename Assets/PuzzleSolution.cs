@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PuzzleSolution : MonoBehaviour {
 
-
-    int cubos = 0; 
+    bool result = false;
+    int cubos = 0;
+    public GameObject piece;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +31,13 @@ public class PuzzleSolution : MonoBehaviour {
         {
             cubos++;
             Debug.Log("cubos correctos: " + cubos);
+
+            if(cubos == 3 && result == false)
+            {
+
+                Instantiate(piece, new Vector3(465, 52, 882), Quaternion.identity);
+                result = false;
+            }
 
 
         }
