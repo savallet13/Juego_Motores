@@ -9,6 +9,10 @@ public class SpawnEnemy : MonoBehaviour
     public Transform[] enemy_spawn_points;
     public GameObject bear;
     private GameObject sp;
+    public GameObject piece;
+    public int NumberEnemies = 5;
+
+    private bool oleada = false;
 
     // Use this for initialization
     void Start()
@@ -17,7 +21,18 @@ public class SpawnEnemy : MonoBehaviour
     }
     // Update is called once per frame
     void Update()
+
+
     {
+        
+        if(oleada == false && NumberEnemies == 0)
+        {
+
+            oleada = true;
+            Instantiate(piece, new Vector3(725, 52, 213), Quaternion.identity);
+            
+
+        }
 
     }
     void Spanw_Enemy()

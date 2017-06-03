@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     Animator anim;
     Transform player;               // Reference to the player's position.
-    NavMeshAgent nav;               // Reference to the nav mesh agent.
+    NavMeshAgent nav;    // Reference to the nav mesh agent.
 
     public Vector3 posPlayer;
     public float distancia;

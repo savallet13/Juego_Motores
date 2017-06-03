@@ -10,6 +10,7 @@ public class MovePlayer : MonoBehaviour {
     public Slider slider_food;
     public Hud hud;
     public SpawnFood spf;
+    public SpawnEnemy spe;
 
 
     private float m_TurnInputValue;
@@ -215,6 +216,7 @@ public class MovePlayer : MonoBehaviour {
         if (other.tag.Equals("Boar"))
         {
             Destroy(other.gameObject);
+            spe.NumberEnemies--;
         }
         if (other.tag.Equals("Respawn"))
         {
@@ -222,6 +224,7 @@ public class MovePlayer : MonoBehaviour {
             int num_sp = int.Parse(other.name.Substring(1));
             spf.StartCoroutine(spf.prova(num_sp-1));
             Destroy(other.gameObject);
+            
         }
     }
     
