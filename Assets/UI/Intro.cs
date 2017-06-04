@@ -21,7 +21,7 @@ public class Intro : MonoBehaviour
         {
             if (SGUI.PixelInPercentages(Input.mousePosition, Flecha.Percentages))
             {
-                SceneManager.LoadScene("Game");
+                SceneManager.LoadScene("GamePlay");
 
 
             }

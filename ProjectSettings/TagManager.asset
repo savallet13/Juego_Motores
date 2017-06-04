@@ -9,6 +9,8 @@ TagManager:
   - Span
   - cubo 3
   - SliderP
+  - Barco
+  - Cerdo
   layers:
   - Default
   - TransparentFX

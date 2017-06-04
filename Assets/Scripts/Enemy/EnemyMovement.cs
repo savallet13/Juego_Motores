@@ -77,4 +77,13 @@ public class EnemyMovement : MonoBehaviour
         anim.SetBool("Atacando",true);
         Slider_Personaje.value -= ataque;
     }
+    public void setSlider(float damage)
+    {
+        Slider_Life.value -= damage;
+    }
+    public float getValueSlider()
+    {
+        return Slider_Life.value;
+    }
+
 }

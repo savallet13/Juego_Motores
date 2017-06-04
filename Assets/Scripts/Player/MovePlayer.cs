@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MovePlayer : MonoBehaviour {
@@ -11,7 +12,7 @@ public class MovePlayer : MonoBehaviour {
     public Hud hud;
     public SpawnFood spf;
     public SpawnEnemy spe;
-    public Slider Life_Enemie;
+    Slider Life_Enemie;
 
     //Privates
     private float m_TurnInputValue;
@@ -20,6 +21,7 @@ public class MovePlayer : MonoBehaviour {
     Quaternion angle_rotation;
     Animator animacion;
     Rigidbody rigidBodyPlayer;
+    EnemyMovement boea;
     
     int floorMask;
     float attack = 2.5f;
@@ -111,7 +113,6 @@ public class MovePlayer : MonoBehaviour {
         // Apply this movement to the rigidbody's position.
         rigidBodyPlayer.MovePosition(rigidBodyPlayer.position + movement);
     }
-
     void Jump()
     {
         if (Input.GetKeyDown(KeyCode.X))
@@ -156,9 +157,7 @@ public class MovePlayer : MonoBehaviour {
             }
 
         
-    }
-
-   
+    }  
     private void Turn()
     {
         // Determine the number of degrees to be turned based on the input, speed and time between frames.
@@ -168,7 +167,6 @@ public class MovePlayer : MonoBehaviour {
         // Apply this rotation to the rigidbody's rotation.
         rigidBodyPlayer.MoveRotation(rigidBodyPlayer.rotation * turnRotation);
     }
-
     void Animatiion_Jump(float jump)
     {
         bool j = jump != 0f;
@@ -207,20 +205,13 @@ public class MovePlayer : MonoBehaviour {
         animacion.SetBool("isRunning", run);
         
     }
-
-
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Canoa")
         {
             Destroy(other.gameObject);
-            hud.UpdateScore(cont);
+            hud.AddScore(1);
         }
-        /*if (other.tag.Equals("Boar"))
-        {
-            //Destroy(other.gameObject);
-            //spe.NumberEnemies--;
-        }*/
         if (other.tag.Equals("Respawn"))
         {
             hud.updateFood(200f);
@@ -229,15 +220,19 @@ public class MovePlayer : MonoBehaviour {
             Destroy(other.gameObject);
             
         }
+        if (other.tag.Equals("Barco"))
+        {
+            SceneManager.LoadScene("End");
+        }
     }
     void OnTriggerStay(Collider other)
     {
-        if (other.tag.Equals("Boar") && hit==1)
+        if (other.tag.Equals("Cerdo") && hit==1)
         {
-            print("ola eduard");
-            print("wwfefwefwe valor del slider del enemigo "+Life_Enemie.value);
-            Life_Enemie.value -= attack;
-            if (Life_Enemie.value==0)
+            boea = GameObject.FindGameObjectWithTag("Cerdo").GetComponent<EnemyMovement>();
+            boea.setSlider(attack);
+            //Life_Enemie.value -= attack;
+            if (boea.getValueSlider()<=0)
             {
                 Destroy(other.gameObject);
                 spe.NumberEnemies--;

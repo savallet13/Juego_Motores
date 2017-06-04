@@ -5,14 +5,10 @@ using UnityEngine;
 public class PieceSpwan : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start () {	
 	}
-	
 	// Update is called once per frame
 	void Update () {
-
         transform.Rotate(Vector3.up * Time.deltaTime * 10);
-		
 	}
 }
