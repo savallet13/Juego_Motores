@@ -27,20 +27,16 @@ public class Menu : MonoBehaviour
             if (SGUI.PixelInPercentages(Input.mousePosition, Start.Percentages))
             {
                 SceneManager.LoadScene("Intro");
-
-
             }
 
             if (SGUI.PixelInPercentages(Input.mousePosition, Explore.Percentages))
             {
                 SceneManager.LoadScene("Explore");
-
             }
 
             if (SGUI.PixelInPercentages(Input.mousePosition, Options.Percentages))
             {
-                // Si pulsamos credits
-
+                SceneManager.LoadScene("Options");
             }
         }
     }
@@ -55,8 +51,6 @@ public class Menu : MonoBehaviour
         Explore = new SGUI.SelfButton(40, 72, size, sizeb, ExploreT, 1.1f, 1.1f);
         Options = new SGUI.SelfButton(70, 70, size, size, OptionsT, 1.1f, 1.1f);
         
-
-
         Start.Draw();
         Options.Draw();
         Explore.Draw();

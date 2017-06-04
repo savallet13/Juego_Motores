@@ -11,6 +11,7 @@ public class MovePlayer : MonoBehaviour {
     public Hud hud;
     public SpawnFood spf;
     public SpawnEnemy spe;
+    public Slider Life_Enemie;
 
     //Privates
     private float m_TurnInputValue;
@@ -21,7 +22,7 @@ public class MovePlayer : MonoBehaviour {
     Rigidbody rigidBodyPlayer;
     
     int floorMask;
-    float attack = 25f;
+    float attack = 2.5f;
     
     float jumpForce = 100;
     float time = 0;
@@ -39,6 +40,11 @@ public class MovePlayer : MonoBehaviour {
 
     string m_MovementAxisName;
     string m_TurnAxisName;
+    //
+    float run ;
+    float jump;
+    float hit ;
+    float take_Object ;
 
     // Use this for initialization
     void Start () {
@@ -81,10 +87,10 @@ public class MovePlayer : MonoBehaviour {
     void FixedUpdate()
     {
         // Store the input axes.
-        float run = Input.GetAxisRaw("Run");
-        float jump = Input.GetAxisRaw("Jump");
-        float hit = Input.GetAxisRaw("Hit");
-        float take_Object = Input.GetAxisRaw("TakeObject");
+        run = Input.GetAxisRaw("Run");
+        jump = Input.GetAxisRaw("Jump");
+        hit = Input.GetAxisRaw("Hit");
+        take_Object = Input.GetAxisRaw("TakeObject");
         // Move the player around the scene.
         Move();
         Turn();
@@ -210,11 +216,11 @@ public class MovePlayer : MonoBehaviour {
             Destroy(other.gameObject);
             hud.UpdateScore(cont);
         }
-        if (other.tag.Equals("Boar"))
+        /*if (other.tag.Equals("Boar"))
         {
             //Destroy(other.gameObject);
-            spe.NumberEnemies--;
-        }
+            //spe.NumberEnemies--;
+        }*/
         if (other.tag.Equals("Respawn"))
         {
             hud.updateFood(200f);
@@ -222,6 +228,20 @@ public class MovePlayer : MonoBehaviour {
             spf.StartCoroutine(spf.prova(num_sp-1));
             Destroy(other.gameObject);
             
+        }
+    }
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag.Equals("Boar") && hit==1)
+        {
+            print("ola eduard");
+            print("wwfefwefwe valor del slider del enemigo "+Life_Enemie.value);
+            Life_Enemie.value -= attack;
+            if (Life_Enemie.value==0)
+            {
+                Destroy(other.gameObject);
+                spe.NumberEnemies--;
+            }
         }
     }
     

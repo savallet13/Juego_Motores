@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Hud : MonoBehaviour {
 
@@ -30,6 +31,7 @@ public class Hud : MonoBehaviour {
         {
             //You has die
             slider_life.value = 0f;
+            SceneManager.LoadScene("GameOver");
 
         }
         else
@@ -67,7 +69,7 @@ public class Hud : MonoBehaviour {
         {
             score.text += 1;
         }
-        if (score.text.Equals("6"))
-            Application.Quit();
+       
+           
     }
 }

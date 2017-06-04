@@ -789,6 +789,7 @@ MonoBehaviour:
   hud: {fileID: 965939227}
   spf: {fileID: 1810548226}
   spe: {fileID: 2044025667}
+  Life_Enemie: {fileID: 1667676178}
 --- !u!1 &528387205
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,7 +2268,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1240512799}
   m_LocalRotation: {x: 0.2477718, y: 0.34451818, z: 0.09479178, w: -0.90051705}
-  m_LocalPosition: {x: 769.7808, y: 25.630424, z: 200.44194}
+  m_LocalPosition: {x: 782.26245, y: 14.497154, z: 186.51704}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3179,6 +3180,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0a511126f5f6f4449ec80434dc3dfe8, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1667676178 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114036709825273106, guid: 1ccb41084a415664686bf13324117cf7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1730490282}
+  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1668390386
 Prefab:
   m_ObjectHideFlags: 0
@@ -3427,21 +3434,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224274534995132224, guid: 1ccb41084a415664686bf13324117cf7,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224274534995132224, guid: 1ccb41084a415664686bf13324117cf7,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54913213322202124, guid: 1ccb41084a415664686bf13324117cf7,
-        type: 2}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 114835795617269964, guid: 1ccb41084a415664686bf13324117cf7,
         type: 2}
       propertyPath: Slider_Personaje
@@ -3452,6 +3444,16 @@ Prefab:
       propertyPath: hud
       value: 
       objectReference: {fileID: 965939227}
+    - target: {fileID: 224274534995132224, guid: 1ccb41084a415664686bf13324117cf7,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224274534995132224, guid: 1ccb41084a415664686bf13324117cf7,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ccb41084a415664686bf13324117cf7, type: 2}
   m_IsPrefabParent: 0

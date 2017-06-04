@@ -142,6 +142,7 @@
     <Compile Include="Assets\Scripts\Player\MovePlayer.cs" />
     <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
     <Compile Include="Assets\Scripts\SpawnFood.cs" />
+    <Compile Include="Assets\UI\Explorar.cs" />
     <Compile Include="Assets\UI\Fin.cs" />
     <Compile Include="Assets\UI\GameOver.cs" />
     <Compile Include="Assets\UI\Intro.cs" />

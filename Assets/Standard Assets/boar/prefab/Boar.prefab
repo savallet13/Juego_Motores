@@ -1935,6 +1935,8 @@ MonoBehaviour:
   distancia: 0
   distanciaMax: 25
   Slider_Life: {fileID: 114036709825273106}
+  Slider_Personaje: {fileID: 0}
+  hud: {fileID: 0}
 --- !u!114 &114862910860243052
 MonoBehaviour:
   m_ObjectHideFlags: 1

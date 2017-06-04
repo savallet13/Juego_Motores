@@ -22,7 +22,6 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         Slider_Personaje = GameObject.FindGameObjectWithTag("SliderP").GetComponent<Slider>();
-        //print("Nombre del Slider del Personaje : " + Slider_Personaje.name);
     }
     void FixedUpdate()
     {
@@ -65,6 +64,11 @@ public class EnemyMovement : MonoBehaviour
         {
             Atacar();
         }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        Parar();
+        anim.SetBool("Atacando", false);
     }
     void Atacar()
     {
