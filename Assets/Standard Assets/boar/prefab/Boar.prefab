@@ -1934,6 +1934,7 @@ MonoBehaviour:
   posPlayer: {x: 0, y: 0, z: 0}
   distancia: 0
   distanciaMax: 25
+  Slider_Life: {fileID: 114036709825273106}
 --- !u!114 &114862910860243052
 MonoBehaviour:
   m_ObjectHideFlags: 1

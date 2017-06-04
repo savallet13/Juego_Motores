@@ -12,17 +12,16 @@ public class MovePlayer : MonoBehaviour {
     public SpawnFood spf;
     public SpawnEnemy spe;
 
-
+    //Privates
     private float m_TurnInputValue;
     private float m_MovementInputValue;
-    //Privates
     Vector3 movement;
     Quaternion angle_rotation;
     Animator animacion;
     Rigidbody rigidBodyPlayer;
     
     int floorMask;
-
+    float attack = 25f;
     
     float jumpForce = 100;
     float time = 0;
@@ -184,8 +183,6 @@ public class MovePlayer : MonoBehaviour {
         bool take = take_object != 0f;
         animacion.SetBool("isTakeObject", take);
     }
-
-
     void Animating(float h, float v,float r)
     {
         // Create a boolean that is true if either of the input axes is non-zero.
@@ -215,7 +212,7 @@ public class MovePlayer : MonoBehaviour {
         }
         if (other.tag.Equals("Boar"))
         {
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
             spe.NumberEnemies--;
         }
         if (other.tag.Equals("Respawn"))

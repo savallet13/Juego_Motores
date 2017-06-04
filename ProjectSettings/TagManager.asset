@@ -8,6 +8,7 @@ TagManager:
   - Boar
   - Span
   - cubo 3
+  - SliderP
   layers:
   - Default
   - TransparentFX

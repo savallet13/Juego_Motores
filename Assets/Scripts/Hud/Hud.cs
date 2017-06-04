@@ -24,7 +24,7 @@ public class Hud : MonoBehaviour {
         setLife();
         
     }
-    void setLife()
+    public void setLife()
     {
         if(slider_life.value <= 0)
         {

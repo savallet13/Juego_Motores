@@ -1,17 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
     Animator anim;
-    Transform player;               // Reference to the player's position.
-    NavMeshAgent nav;    // Reference to the nav mesh agent.
+    Transform player;  // Reference to the player's position.
+    NavMeshAgent nav;  // Reference to the nav mesh agent.
+    private float ataque =1f;
 
     public Vector3 posPlayer;
     public float distancia;
     public float distanciaMax = 25f;
+    public Slider Slider_Life;
+    public Slider Slider_Personaje;
+    public Hud hud;
 
+
+
+    void Start()
+    {
+        Slider_Personaje = GameObject.FindGameObjectWithTag("SliderP").GetComponent<Slider>();
+        //print("Nombre del Slider del Personaje : " + Slider_Personaje.name);
+    }
     void FixedUpdate()
     {
 
@@ -31,8 +43,7 @@ public class EnemyMovement : MonoBehaviour
     {
         anim.SetBool("Visto", false);
     }
-    void Update()
-    {
+    void Update(){
         posPlayer = player.transform.position;
 
         distancia = Vector3.Distance(posPlayer, this.transform.position); //Obtencion del vector dirección (transform es él mismo en este caso Enemy)
@@ -47,5 +58,19 @@ public class EnemyMovement : MonoBehaviour
             nav.SetDestination(transform.position);
             Parar();
         }
+    }
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag.Equals("Player"))
+        {
+            Atacar();
+        }
+    }
+    void Atacar()
+    {
+        Parar();
+        anim.SetTrigger("Attack");
+        anim.SetBool("Atacando",true);
+        Slider_Personaje.value -= ataque;
     }
 }
