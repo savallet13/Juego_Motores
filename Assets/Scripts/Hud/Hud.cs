@@ -49,7 +49,7 @@ public class Hud : MonoBehaviour {
         }
         else
         {
-            slider_food.value -= 0.25f;
+            slider_food.value -= 0.15f;
         }
         
     }
