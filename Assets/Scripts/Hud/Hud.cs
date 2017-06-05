@@ -22,11 +22,13 @@ public class Hud : MonoBehaviour {
 	void Start () {
         num_piezas = 0;
         UpdateScore();
+       
     }	
 	// Update is called once per frame
 	void Update () {
         setFood();
-        setLife();      
+        setLife();
+        Fin_Game();
     }
     public void setLife()
     {
@@ -67,13 +69,12 @@ public class Hud : MonoBehaviour {
     void UpdateScore()
     {
         count_pieces.text = "" + num_piezas;
+        //Fin_Game();
     }
     void Fin_Game()
     {
         if (num_piezas==3){
-            //Sacamos el Barco
             Instantiate(Barco,SpanPointBarco.transform.position, SpanPointBarco.transform.rotation);
-            //Cuando coja el barco pantalla de Fin
         }
     }
 }

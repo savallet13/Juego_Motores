@@ -84,7 +84,6 @@ public class MovePlayer : MonoBehaviour {
         // Set up references.
         animacion = GetComponent<Animator>();
         rigidBodyPlayer = GetComponent<Rigidbody>();
-
     }
     void FixedUpdate()
     {
@@ -135,28 +134,18 @@ public class MovePlayer : MonoBehaviour {
                     rigidBodyPlayer.AddForce(new Vector3(0, 350, 0));
                     jumpCD = 1;
                 }
-            } 
-
-
-            
+            }          
             }
 
     if ( jumpCD == 1) {
-
                 timer += Time.deltaTime;
                 seconds = timer % 60;
             }
-
     if (seconds > 2) {
-
                 jumpCD = 0;
                 timer = 0;
-                seconds = 0;
-
-    
-            }
-
-        
+                seconds = 0;  
+            }    
     }  
     private void Turn()
     {
@@ -231,7 +220,7 @@ public class MovePlayer : MonoBehaviour {
         {
             boea = GameObject.FindGameObjectWithTag("Cerdo").GetComponent<EnemyMovement>();
             boea.setSlider(attack);
-            //Life_Enemie.value -= attack;
+            
             if (boea.getValueSlider()<=0)
             {
                 Destroy(other.gameObject);
