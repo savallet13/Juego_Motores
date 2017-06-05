@@ -50,12 +50,15 @@ public class Options : MonoBehaviour
         SGUI.DrawTexture(0, 0, 100, 100, Background);
         
         float size = 15;
-        float sizeb = 13;
-        float sizec = 7;
-        On = new SGUI.SelfButton(42, 50, size, size, OnT, 1.1f, 1.1f);
+        float sizeb = 10;
+
+        float sized = 6;
+        float sizee = 10;
+
+        On = new SGUI.SelfButton(42, 50, size, sizeb, OnT, 1.1f, 1.1f);
         Off = new SGUI.SelfButton(42, 65, size, sizeb, OffT, 1.1f, 1.1f);
-        Back = new SGUI.SelfButton(90, 80, sizec, sizec, BackT, 1.1f, 1.1f);
-        
+        Back = new SGUI.SelfButton(90, 80, sized, sizee, BackT, 1.1f, 1.1f);
+
 
 
         On.Draw();

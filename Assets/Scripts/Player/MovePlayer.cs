@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class MovePlayer : MonoBehaviour {
 
+    public static MovePlayer me;
     //Publics
     public AudioClip punch;
     public AudioClip deathpig;
@@ -17,6 +18,7 @@ public class MovePlayer : MonoBehaviour {
     public SpawnFood spf;
     public SpawnEnemy spe;
     Slider Life_Enemie;
+    public bool active = true;
 
     //Privates
     private float m_TurnInputValue;
@@ -55,7 +57,7 @@ public class MovePlayer : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+        me = this;
         // The axes names are based on player number.
         m_MovementAxisName = "Vertical";
         m_TurnAxisName = "Horizontal";
@@ -77,6 +79,10 @@ public class MovePlayer : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         // Store the value of both input axes.
+        if (!active)
+        {
+            return;
+        }
         m_MovementInputValue = Input.GetAxis(m_MovementAxisName);
         m_TurnInputValue = Input.GetAxis(m_TurnAxisName);
     }
@@ -93,6 +99,10 @@ public class MovePlayer : MonoBehaviour {
     }
     void FixedUpdate()
     {
+        if (!active)
+        {
+            return;
+        }
         // Store the input axes.
         run = Input.GetAxisRaw("Run");
         jump = Input.GetAxisRaw("Jump");
