@@ -199,9 +199,9 @@ public class MovePlayer : MonoBehaviour {
         bool run = r == 1;
 
         if (run)
-            speed=15;
+            speed=25;
         else
-            speed = 5.5f;
+            speed = 10f;
         animacion.SetBool("isRunning", run);
         
     }

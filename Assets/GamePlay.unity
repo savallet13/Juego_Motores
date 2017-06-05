@@ -782,7 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6126bc01b3d82ec4aa9a0e66447c7041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 20
   m_TurnSpeed: 180
   cont: {fileID: 120493853}
   slider_food: {fileID: 1771452936}

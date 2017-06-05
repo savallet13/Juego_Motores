@@ -24,16 +24,16 @@ public class Options : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (SGUI.PixelInPercentages(Input.mousePosition, On.Percentages))
+            if (AudioListener.volume == 0 &&  SGUI.PixelInPercentages(Input.mousePosition, On.Percentages))
             {
-                //Encender Musica y sonido
+                AudioListener.volume = 100;
 
 
             }
 
-            if (SGUI.PixelInPercentages(Input.mousePosition, Off.Percentages))
+            if (AudioListener.volume != 0 && SGUI.PixelInPercentages(Input.mousePosition, Off.Percentages))
             {
-                //Apagar Musica y sonido
+                AudioListener.volume = 0;
 
             }
 
