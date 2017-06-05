@@ -7,19 +7,28 @@ public class PuzzleSolution : MonoBehaviour {
     bool result = false;
     int cubos = 0;
     public GameObject piece;
+    public AudioClip puzzlecorrecto;
+    private AudioSource source;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    void Awake()
+    {
+        source = GetComponent<AudioSource>();
+        
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         if ( cubos == 3)
         {
 
             Debug.Log("Puzzle correcto");
+            source.PlayOneShot(puzzlecorrecto);
 
         }
 		

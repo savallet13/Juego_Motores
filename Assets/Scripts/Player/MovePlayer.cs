@@ -7,6 +7,8 @@ public class MovePlayer : MonoBehaviour {
     //Publics
     public AudioClip punch;
     public AudioClip deathpig;
+    public AudioClip comer;
+    public AudioClip coger;
     public float speed = 6f;
     public float m_TurnSpeed = 180f;
     public Text cont;
@@ -203,6 +205,7 @@ public class MovePlayer : MonoBehaviour {
         if (other.tag == "Canoa")
         {
             Destroy(other.gameObject);
+            source.PlayOneShot(coger);
             hud.AddScore(1);
         }
         if (other.tag.Equals("Respawn"))
@@ -210,6 +213,7 @@ public class MovePlayer : MonoBehaviour {
             hud.updateFood(200f);
             int num_sp = int.Parse(other.name.Substring(1));
             spf.StartCoroutine(spf.prova(num_sp-1));
+            source.PlayOneShot(comer);
             Destroy(other.gameObject);
             
         }

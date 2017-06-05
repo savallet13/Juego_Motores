@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class Explorar : MonoBehaviour
 {
     public Texture2D BackT;
+    public Texture2D Instrucciones;
     SGUI.SelfButton Back;
 
     void Update()
@@ -20,8 +21,10 @@ public class Explorar : MonoBehaviour
 
     void OnGUI()
     {
-        float size = 7;
-        Back = new SGUI.SelfButton(90, 90, size, size, BackT, 1.0f, 1.1f);
+        SGUI.DrawTexture(60, 60, 40, 40, Instrucciones);
+        float size = 6;
+        float sizeb = 10;
+        Back = new SGUI.SelfButton(90, 5, size, sizeb, BackT, 1.1f, 1.1f);
         Back.Draw();
 
     }

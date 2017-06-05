@@ -32,11 +32,12 @@ public class GameOver : MonoBehaviour
     void OnGUI()
     {
         SGUI.DrawTexture(0, 0, 100, 100, Background);
-        
-        float size = 7;
-        Back = new SGUI.SelfButton(50, 70, size, size, BackT, 1.0f, 1.1f);
-        
-        
+
+        float size = 6;
+        float sizeb = 10;
+        Back = new SGUI.SelfButton(50, 70, size, sizeb, BackT, 1.1f, 1.1f);
+
+
 
 
         Back.Draw();
