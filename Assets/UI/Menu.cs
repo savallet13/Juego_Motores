@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
 
+    public AudioClip clickSound;
+
+    private AudioSource source;
+
     public Texture2D Background;
 
     public Texture2D StartT;
@@ -19,6 +23,12 @@ public class Menu : MonoBehaviour
     SGUI.SelfButton Options;
 
 
+    void Awake()
+    {
+
+        source = GetComponent<AudioSource>();
+
+    }
 
     void Update()
     {
@@ -26,16 +36,19 @@ public class Menu : MonoBehaviour
         {
             if (SGUI.PixelInPercentages(Input.mousePosition, Start.Percentages))
             {
+                source.PlayOneShot(clickSound);
                 SceneManager.LoadScene("Intro");
             }
 
             if (SGUI.PixelInPercentages(Input.mousePosition, Explore.Percentages))
             {
+                source.PlayOneShot(clickSound);
                 SceneManager.LoadScene("Explore");
             }
 
             if (SGUI.PixelInPercentages(Input.mousePosition, Options.Percentages))
             {
+                source.PlayOneShot(clickSound);
                 SceneManager.LoadScene("Options");
             }
         }

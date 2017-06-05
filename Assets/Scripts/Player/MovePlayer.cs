@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class MovePlayer : MonoBehaviour {
 
     //Publics
+    public AudioClip punch;
+    public AudioClip deathpig;
     public float speed = 6f;
     public float m_TurnSpeed = 180f;
     public Text cont;
@@ -22,7 +24,8 @@ public class MovePlayer : MonoBehaviour {
     Animator animacion;
     Rigidbody rigidBodyPlayer;
     EnemyMovement boea;
-    
+    private AudioSource source;
+
     int floorMask;
     float attack = 2.5f;
     
@@ -79,6 +82,7 @@ public class MovePlayer : MonoBehaviour {
     //wdqwdqdqw
     void Awake()
     {
+        source = GetComponent<AudioSource>();
         // Create a layer mask for the floor layer.
         floorMask = LayerMask.GetMask("Floor");
         // Set up references.
@@ -218,12 +222,14 @@ public class MovePlayer : MonoBehaviour {
     {
         if (other.tag.Equals("Cerdo") && hit==1)
         {
+            source.PlayOneShot(punch);
             boea = GameObject.FindGameObjectWithTag("Cerdo").GetComponent<EnemyMovement>();
             boea.setSlider(attack);
             
             if (boea.getValueSlider()<=0)
             {
                 Destroy(other.gameObject);
+                source.PlayOneShot(deathpig);
                 spe.NumberEnemies--;
             }
         }
